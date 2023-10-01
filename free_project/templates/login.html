@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <link href="{% static 'css/log.css' %}" rel="stylesheet">
+
+    <div class="container1">
+        <h2>Login</h2>
+        <form action="{% url 'freeapp:log' %}" method="post">
+        {% csrf_token %}
+            <input type="text" id="username" name="username" placeholder="Enter Username" required><br><br>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required><br><br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <p>Don't have an account? <a  style="color:blue; " href="{% url 'freeapp:register' %}">Register</a></p>
+        {% for msg in messages %}
+        {{msg}}
+        {% endfor %}
+    </div>
+
+{% endblock %}

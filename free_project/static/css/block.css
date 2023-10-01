@@ -1,0 +1,51 @@
+body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background:url(../images/register.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 50px;
+
+
+        }
+.container {
+            max-width: 400px;
+            margin: auto;
+            background-color: pink;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+
+
+input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+
+
+.container3{
+            max-width: 600px;
+            margin: auto;
+            background-color: red;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

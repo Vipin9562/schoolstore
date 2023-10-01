@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="{% static 'css/stdns.css' %}" rel="stylesheet">
+    <title>Form Requirements</title>
+</head>
+<body>
+    <div class="container">
+         <h1>Fill the Form</h1>
+
+         <form action="{% url 'formapp:students' %}" method="POST">
+              {% csrf_token %}
+              <div class="input-box">
+                  <div>
+                       <span class="details">Name:</span>
+                       <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+                  </div>
+                  <div>
+                        <span class="details">Date of Birth:</span>
+                        <input type="date" id="dob" name="dob" required>
+                  </div>
+                  <div>
+                        <span class="details">Age:</span>
+                        <input type="number" id="age" name="age" required>
+                  </div>
+              </div><br>
+              <div class="input-box">
+
+                  <div class="zero">
+                       <span class="details">Gender:</span>
+                      <div class="gender">
+                            <span class="details">Male:</span>
+                            <input type="radio" id="male" name="gender" value="male" required>
+                      </div>
+                      <div class="gender">
+                           <span class="details">Femail:</span>
+                           <input type="radio" id="female" name="gender" value="female" required>
+                      </div>
+
+                  </div>
+                  <div>
+                      <span class="details">Phone Number:</span>
+                      <input type="number" id="phone" name="phone" placeholder="Enter Your Phone number" required>
+                  </div>
+                  <div>
+                      <span class="details">Email:</span>
+                      <input type="email" id="email" name="email" placeholder="Enter Email" required>
+                  </div>
+              </div><br>
+
+              <div class="input-box">
+                 <span class="details">Address:</span>
+                 <textarea id="address" name="address" placeholder="Enter Your Address" required></textarea>
+
+                   <span class="details">Department:</span>
+                   <select id="department" name="department" required>
+                        <option value="computer_science">Computer Science</option>
+                        <option value="biology_science">BiologyScience</option>
+                        <option value="maths_commerce">Maths Commerce</option>
+                        <option value="computer_commerce">Computer Commerce</option>
+                        <option value="humanities">Humanities</option>
+                   </select>
+              </div><br>
+              <div class="input-box">
+                   <span class="details">Course:</span>
+                   <select id="course" name="course" required>
+               <!-- Course options will be populated dynamically based on department selection using JavaScript -->
+                   </select>
+
+                 <span class="details">Purpose:</span>
+                 <select id="purpose" name="purpose" required>
+                      <option value="enquiry">Enquiry</option>
+                      <option value="placeOrder">Appointment</option>
+                      <option value="return">Donation</option>
+                 </select>
+              </div><br>
+              <div class="input-box">
+                    <span class="details">Materials Provide:</span>
+                  <div>
+                        <input type="checkbox" id="notebook" name="materials" value="notebook">
+                        <label for="notebook">Debit Note Book</label>
+                        <input type="checkbox" id="pen" name="materials" value="pen">
+                        <label for="pen">Pen</label>
+                        <input type="checkbox" id="papers" name="materials" value="papers">
+                        <label for="papers">Exam Papers</label>
+                  </div>
+              </div><br>
+                    <input class="btn btn-primary" type="submit" value="submit">
+<!--        <input type="button" value="Logout">-->
+            <a class="btn btn-primary" href="{% url 'freeapp:logout' %}">Logout</a>
+
+
+        </form>
+
+        {% for msg in messages %}
+          {{msg}}
+        {% endfor %}<br>
+        <a href="{% url 'freeapp:demo' %}">Return to Home Page</a>
+    </div>
+    <script>
+        // JavaScript for populating course options based on department selection
+        document.getElementById('department').addEventListener('change', function() {
+            var department = this.value;
+            var courseSelect = document.getElementById('course');
+            courseSelect.innerHTML = '';
+
+            if (department === 'computer_science') {
+                var options = ['B.Tech', 'BCA', 'BSc IT'];
+            } else if (department === 'biology_science') {
+                var options = ['B.VSc', 'BSc Nursing', 'BSc Microbiology'];
+            } else if (department === 'maths_commerce') {
+                var options = ['BA', 'BSc','BDS'];
+            }else if (department === 'computer_commerce') {
+                var options = ['BBA', 'BCom', 'Accounting',];
+            }else if (department === 'humanities') {
+                var options = ['B.Com.LLB', 'B.B.A', 'B.H.M'];
+            }
+
+            for (var i = 0; i < options.length; i++) {
+                var option = document.createElement('option');
+                option.value = options[i];
+                option.text = options[i];
+                courseSelect.appendChild(option);
+            }
+        });
+    </script>
+
+</body>
+</html>

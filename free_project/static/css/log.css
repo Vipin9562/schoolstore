@@ -1,0 +1,32 @@
+body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background:url(../images/login.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+
+        }
+
+.container1 {
+            margin: 100px auto;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+input[type="submit"]:hover {
+            background-color: #45a049;
+        }

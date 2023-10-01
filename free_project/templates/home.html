@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+        <main>
+
+            <section class="hero">
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+
+                        <div id="carouselExampleCaptions" class="carousel carousel-fade hero-carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="container position-relative h-100">
+                                        <div class="carousel-caption d-flex flex-column justify-content-center">
+                                            <small class="small-title">Introducing new courses <strong class="text-warning">01/05</strong></small>
+
+                                            <h1>Inspiring <span class="text-warning">Lifelong</span> Learning School store</h1>
+
+                                            <div class="d-flex align-items-center mt-4">
+                                                <a class="custom-btn btn custom-link" href="{% url 'freeapp:student_form' %}">Join with us</a>
+
+
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-image-wrap">
+                                        <img src="{% static 'images/slide/buld.jpg' %}" class="img-fluid carousel-image" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="about section-padding" id="section_2">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                            <div class="about-image-wrap h-100">
+                                <img src="{% static 'images/book.png' %}" class="img-fluid about-image" alt="">
+
+                                <div class="about-image-info">
+                                    <h4 class="text-white">School Store</h4>
+
+                                    <p class="text-white mb-0">Describe the facilities available, such as classrooms, labs, libraries, sports facilities, etc</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12 d-flex flex-column">
+                            <div class="about-thumb bg-white shadow-lg">
+
+                                <div class="about-info">
+                                    <small class="small-title">About <strong class="text-warning">02/05</strong></small>
+
+                                    <h2 class="mb-3">School Store</h2>
+
+                                    <h5 class="mb-3">Helping every one since 2001</h5>
+
+                                    <p>Embark on a transformative educational journey with School Store, where excellence meets innovation, and students thrive in an environment dedicated to shaping future leaders</p>
+
+                                    <p>You may support a little   visiting our contact page. Thank you.</p>
+                                </div>
+                            </div>
+
+                            <div class="row h-100">
+                                <div class="col-lg-6 col-6">
+                                    <div class="about-thumb d-flex flex-column justify-content-center bg-danger mb-lg-0 h-100">
+
+                                        <div class="about-info">
+                                            <h5 class="text-white mb-4">We're growing </h5>
+
+                                            <a class="custom-btn btn custom-bg-primary" href="{% url 'freeapp:student_form' %}">Join us</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-6">
+                                    <div class="about-thumb d-flex flex-column justify-content-center bg-warning mb-lg-0 h-100">
+
+                                        <div class="about-info">
+                                            <h5 class="text-white mb-4">How did you about us?</h5>
+
+                                            <p class="text-white mb-0">write us</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <div class="site-footer-wrap d-flex align-items-center">
+                            <p class="copyright-text mb-0 me-4">Copyright © 2036 School Store Co., Ltd.</p>
+
+                            <ul class="social-icon">
+                                <li><a href="https://facebook.com" class="social-icon-link bi-facebook"></a></li>
+
+                                <li><a href="https://pinterest.com" class="social-icon-link bi-pinterest"></a></li>
+
+                                <li><a href="https://twitter.com" class="social-icon-link bi-twitter"></a></li>
+
+                                <li><a href="https://www.youtube.com/@inmakeslearninghub" class="social-icon-link bi-youtube"></a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                    	<p class="copyright-text mb-0 me-4">School Store <a href="#"></a></p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.sticky.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/magnific-popup-options.js' %}"></script>
+        <script src="{% static 'js/click-scroll.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+
+{% endblock %}
